@@ -1,0 +1,172 @@
+\documentclass[10pt,twoside,twocolumn,a4paper]{article}
+
+%% Default action is for double-blinded peer review where 
+%% authors, address and acknowledgements sections are hidden 
+\usepackage[]{bpasts}
+%% For accepted papers enable option "accepted" to deanonymize
+%% your manuscript 
+%\usepackage[accepted]{bpasts}
+
+\usepackage{t1enc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts}
+
+\usepackage{graphicx}
+\usepackage{flushend}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER OF THE ARTICLE (Change all fields)
+\abtitle{Example of article}
+\title{Example of article for Bulletin of the Polish Academy of Science: Technical Sciences}
+
+\abauthor{J. Smith, M. P. Kazmierkowski, and B. Sawicki}
+\author{J. SMITH$^{1} $\email{smith@university.edu.pl} , M. P. KAZMIERKOWSKI$^1$, and B. SAWICKI$^2$}
+
+\Address{$^1$ Warsaw University of Technology, ul. Koszykowa 75, 00-662 Warsaw, Poland\\
+$^2$ Another Notable Affiliation, 13 Sesame str., 90210 New York, USA }
+
+\Abstract{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
+
+\Keywords{keyword1, keyword2, keyword3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EDITOR SECTION (Do not change)
+\vol{XX} \no{Y} \year{2016}
+\setcounter{page}{1}
+\doi{10.1515/bpasts-2016-00ZZ}
+
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BODY OF THE ARTICLE
+
+\section{Introduction}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum \cite{smith2015}\cite{young1989}.
+
+\begin{figure}[h]
+\begin{center}
+a) \includegraphics[width=0.4\linewidth]{img/lena.png} 
+b) \includegraphics[width=0.4\linewidth]{img/lena.png} 
+\end{center}
+\caption{Exemplary image of Lena} \label{fig:lena1}
+\end{figure}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See Fig.~\ref{fig:lena1}.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+\section{Theory}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Equation \eqref{eq:1} is an example.
+
+\begin{equation} \label{eq:1}
+\alpha + \beta = \gamma
+\end{equation}
+
+Maxwell's equations in the popular form.
+\begin{align*} \nabla \cdot \mathbf{D} & =  \rho \nonumber\\ 
+\nabla \cdot \mathbf{B} & =  0 \\
+\nabla \times \mathbf{H} & =  \mathbf{J} + \frac{\partial \mathbf{D}} {\partial t} \\
+\nabla \times \mathbf{E} & =  -\frac{\partial \mathbf{B}} {\partial t} 
+\end{align*}
+
+\section{Experiment}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\begin{itemize}
+\item one
+\item two
+\item three
+\end{itemize}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See Fig. \ref{fig:lena}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{img/lena.png} 
+\end{center}
+\caption{Exemplary image of Lena} \label{fig:lena}
+\end{figure}
+
+\subsection{Title of subsection.}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\begin{table}
+\tabcaption{Results of simulation}\label{tab:results}
+\begin{tabular}{l|c|c|c|c}
+\hline
+header & abc & ijk & xyz & $\theta$ \\
+\hline \hline
+one & 0.1 & 0.01 & 0.001 & 0.0001\\ 
+\hline
+two & 1.1 & 2.2 & 3.3 & 4.4\\
+\hline
+three & 1.1 & 2.2 & 3.3 & 4.4\\
+\hline
+\end{tabular}
+\end{table}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See results on Table \ref{tab:results}.
+
+\begin{table}
+\tabcaption{Results of simulation}\label{tab:results1}
+\begin{tabular}{l|c|c|c|c}
+\hline
+header & abc & ijk & xyz & $\theta$ \\
+\hline \hline
+one & 0.1 & 0.01 & 0.001 & 0.0001\\ 
+\hline
+two & 1.1 & 2.2 & 3.3 & 4.4\\
+\hline
+three & 1.1 & 2.2 & 3.3 & 4.4\\
+\hline
+\end{tabular}
+\end{table}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See Fig. \ref{fig:lena2}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{img/lena.png} 
+\end{center}
+\caption{Exemplary image of Lena} \label{fig:lena2}
+\end{figure}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+\section{Conclusions}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACKNOWLEDGEMENTS
+\begin{acknowledgements}
+This work was partially supported by the Mickey Mouse and friends.
+\end{acknowledgements}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% REFERENCES
+\begin{thebibliography}{99}
+\bibitem{smith2015} J. Smith, "Title of the paper", \emph{Journal name} 12 (3), 45--67 (2015).
+\bibitem{young1989} M. Young: The Technical Writer’s Handbook, Mill Valley, Toronto, 1989.
+\bibitem{apostoli2002} P. Apostoli and A. Kanda, "Cantorian sets, fuzzy sets, rough sets and fregean sets", \emph{Bull. Pol. Ac.: Tech.} 50 (3), 247-276 (2002).
+\bibitem{nicole} R. Nicole, "Title of paper with only first word capitalized", J. Name Stand. Abbrev., (to be published).
+\end{thebibliography}
+
+
+\end{document}
+
+
