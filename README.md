@@ -1,7 +1,9 @@
 bpasts.sty
 ======
 Latex style for journal Bulletin of the Polish Academy of Science: Technical Sciencies 
-by Bartosz.Sawicki@ee.pw.edu.pl
+http://bpasts.czasopisma.pan.pl/
+
+Contact: Bartosz.Sawicki@ee.pw.edu.pl
 
 Compile with `pdflatex`. 
 
