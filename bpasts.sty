@@ -2,12 +2,17 @@
 %% based on biul.sty
 %% Bartosz Sawicki, 2015-12-31
 %% 2016-01-14
+%% 2020-12-29
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{bpasts}
 
 %% Times New Roman font
 \RequirePackage{mathptmx}
+
+\usepackage[]{helvet}
+\usepackage[T1]{fontenc}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Options processing
@@ -47,17 +52,18 @@
 
 \def\invpap{}
 \def\ps@bplain{\let\@mkboth\@gobbletwo
-     \def\@oddhead{\noindent\vbox to6pt{\footnotesize
-BULLETIN OF THE POLISH ACADEMY OF SCIENCES\\
+     \def\@oddhead{\noindent\vbox 
+     %to6pt{\footnotesize
+{\bannerfont \footnotesize BULLETIN OF THE POLISH ACADEMY OF SCIENCES\\
 TECHNICAL SCIENCES, Vol. \@vol, No. \@no, \@year\\
-\textit{DOI: \@doi}\vss}\hfill\invpap}%
+{DOI: \@doi}\vss}\hfill\invpap}%
 \def\@oddfoot{\reset@font\hfil\thepage
      \hfil}\let\@evenhead\@empty\let\@evenfoot\@oddfoot}
 
 \def\ps@myheadings{%
-    \def\@oddfoot{{\footnotesize\noindent Bull. Pol. Ac.: Tech. \@vol(\@no) \@year\hfill\normalsize\thepage}}%
+    \def\@oddfoot{{\footnotesize\noindent VOLUME \@vol, \@year\hfill\footnotesize\thepage}}%
     \def\@oddhead{\noindent\hfil{\normalsize\itshape\@abtitle}\hfil}%
-    \def\@evenfoot{{\noindent\normalsize\thepage\hfill\footnotesize Bull. Pol. Ac.: Tech. \@vol(\@no) \@year}}%
+    \def\@evenfoot{{\noindent\footnotesize\thepage\hfill\footnotesize VOLUME \@vol, \@year}}%
     \if@accepted\def\@evenhead{\noindent\hfil{\small\rm\@abauthor}\hfil}\fi%
     \let\@mkboth\markboth
  }
@@ -137,23 +143,42 @@ TECHNICAL SCIENCES, Vol. \@vol, No. \@no, \@year\\
   \let\maketitle\relax\let\@maketitle\relax
   \gdef\@thanks{}\gdef\@author{}\gdef\@title{}}
 
+%\color{bpastsblue}
+%PANTONE654C == CMYK 1 0.6 0 0.5 == RGB #003380
+\RequirePackage{color}
+\definecolor{bpastsblue}{cmyk}{1,.6,0,0.5}
+\definecolor{greycolor}{cmyk}{0,0,0,.8}
+
+\def\titlefont{\sffamily\fontencoding{T1}\fontseries{b}\fontsize{22}{25.4}\selectfont}
+\def\bannerfont{\sffamily\fontencoding{T1}\fontsize{7}{8.5}\selectfont}
+\def\authorfont{\sffamily\fontencoding{T1}\fontseries{b}\fontsize{9.9}{12}\selectfont}
+\def\abstractheadfont{\sffamily\fontencoding{T1}\fontseries{b}\fontsize{9}{12}\selectfont}
+\def\sectionAfont{\sffamily\fontencoding{T1}\fontseries{b}\fontsize{9}{12}\selectfont}
+\def\sectionBfont{\sffamily\fontencoding{T1}\fontseries{b}\fontshape{it}\fontsize{9}{12}\selectfont}
+\def\sectionCfont{\sffamily\fontencoding{T1}\fontseries{n}\fontsize{9}{12}\selectfont}
+
+\def\tablecapheadfont{\sffamily\fontencoding{T1}\fontseries{b}\fontsize{8}{9.4}\selectfont}
+\def\tableheadfont{\sffamily\fontencoding{T1}\fontseries{m}\fontsize{8}{9.4}\selectfont}
+\def\tablecapfont{\def\textit##1{{\sffamily\selectfont\itshape##1}}\sffamily\fontencoding{T1}\fontseries{m}\fontsize{7}{8.4}\selectfont}
+
+
 \def\@maketitle{%
   \newpage
   \vspace*{1cc}
   \begin{center}%
-       \LARGE\bf\@title\par
+	  {\color{bpastsblue}\titlefont\@title}\par
        \vspace*{1cc}
        \if@accepted
-          \large\rm\@author\par
-          \vspace*{.5cc}
+          \authorfont\@author\par
+          \vspace*{.5cc}\rm
           \small
           \@Address
        \fi
        \end{center}\vskip-\lastskip%
        \vspace*{1.5cc}
        \small        
-       {\bf Abstract.} \@Abstract\unskip \vspace*{.5cc}\\
-       {\bf Key words:} \@Keywords
+       {\color{bpastsblue}\abstractheadfont Abstract.} \@Abstract\unskip \vspace*{.5cc}\\
+       {\color{bpastsblue}\abstractheadfont Key words:} \@Keywords
        \vspace*{.7cc}  
        \par}
 
@@ -163,41 +188,31 @@ TECHNICAL SCIENCES, Vol. \@vol, No. \@no, \@year\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Sections
 %%
-\renewcommand\section{\@startsection {section}{1}{\z@}%
+\renewcommand\section{\@startsection{section}{1}{\z@}%
                                      {-12pt \@plus -2pt \@minus -2pt}%
                                      {4pt \@plus2pt}%
-                                     {\large\bf}}
+                                     {\color{bpastsblue}\sectionAfont\uppercase}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
                                        {-12pt \@plus -2pt \@minus -2pt}%
-                                       {-6pt \@minus -2pt}% by³o -8pt \@minus -2pt
-                                       {\normalfont\bf}}
+                                       {2pt \@minus -2pt}% 
+                                       {\color{greycolor}\sectionBfont}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                        {-12pt \@plus -2pt \@minus -2pt}%
                                        {-4pt \@plus 2pt}%
-                                       {\normalfont\bf}}
+                                       {\color{greycolor}\sectionBfont}}
 \renewcommand\thesection      {\@arabic\c@section}
-\renewcommand\thesubsection   {\thesection.\@arabic\c@subsection}
+\renewcommand\thesubsection   {\@Alph\c@subsection}
 \renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
 
+%\def\subsection{\@startsection{subsection}{2}{1pt}{-1pc plus -1pt minus -1pt}{1pt}{\raggedright\color{greycolor}\sectionBfont\uppercase}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Figures and tables
 %%
-\long\def\@makecaption#1#2{%
-  \vskip\abovecaptionskip\small
-  \sbox\@tempboxa{#1. #2}%
-  \ifdim \wd\@tempboxa >\hsize
-    #1. #2\par
-  \else
-    \global \@minipagefalse
-    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip\normalsize}
 
-\newcommand{\tabcaption}[1]{%
-  \vskip\abovecaptionskip
-  \tablename \refstepcounter{table} \arabic{table} \\ #1 
-  \vskip\belowcaptionskip}
+\usepackage{caption}
+\captionsetup[table]{font={sf,footnotesize},labelfont={bf,color=bpastsblue},labelsep=period}
+\captionsetup[figure]{font={sf,footnotesize},labelfont={bf,color=bpastsblue}, labelsep=period}
 
 \renewenvironment{table}
                {\@float{table}\begin{center}\begin{footnotesize}}
@@ -205,7 +220,6 @@ TECHNICAL SCIENCES, Vol. \@vol, No. \@no, \@year\\
 \renewenvironment{table*}
                {\@dblfloat{table}\begin{center}\begin{footnotesize}}
                {\end{footnotesize}\end{center}\end@dblfloat}
-
 
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\tablename}{Table}
@@ -217,12 +231,12 @@ TECHNICAL SCIENCES, Vol. \@vol, No. \@no, \@year\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% References
 %%
-\renewcommand{\refname}{References}
+\renewcommand{\refname}{REFERENCES}
 
 \font\sc=rtxsc at10pt
 \def\xsc#1#2*{#1\sc#2}
 \renewenvironment{thebibliography}[1]
-{\bigskip\noindent{\textsc{\refname}}
+{\bigskip\noindent{\color{bpastsblue}\sectionAfont\refname}
       \list{[\@arabic\c@enumiv]%
            }%
            {\settowidth\labelwidth{\@biblabel{#1}}%
@@ -289,7 +303,7 @@ TECHNICAL SCIENCES, Vol. \@vol, No. \@no, \@year\\
 \excludecomment{acknowledgements}
 \if@accepted
   \renewenvironment{acknowledgements}
-  { \vspace{1em}\noindent\textbf{Acknowledgements.} }
+  { \section*{Acknowledgements} }
   { }
 \fi
 
