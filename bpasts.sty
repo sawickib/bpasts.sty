@@ -2,7 +2,7 @@
 %% based on biul.sty
 %% Bartosz Sawicki, 2015-12-31
 %% 2016-01-14
-%% 2020-12-29
+%% 2020-12-30
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{bpasts}
@@ -230,71 +230,9 @@ TECHNICAL SCIENCES, Vol. \@vol, No. \@no, \@year\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% References
-%%
+%% use Bibtex and IEEEtran.bst style
 \renewcommand{\refname}{REFERENCES}
 
-\font\sc=rtxsc at10pt
-\def\xsc#1#2*{#1\sc#2}
-\renewenvironment{thebibliography}[1]
-{\bigskip\noindent{\color{bpastsblue}\sectionAfont\refname}
-      \list{[\@arabic\c@enumiv]%
-           }%
-           {\settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth%
-            \advance\leftmargin\labelsep%
-            \@openbib@code%
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty%
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-      \small\sloppy\clubpenalty4000\widowpenalty4000%
-      \sfcode`\.\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
-
-\usepackage{amsthm}
-\def\thmhead@plain#1#2#3{%
-  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
-  \thmnote{ {\the\thm@notefont#3}}}
-\let\thmhead\thmhead@plain
-\def\swappedhead#1#2#3{%
-  \thmnumber{#2}%
-  \thmname{\@ifnotempty{#2}{~}#1}%
-  \thmnote{ {\the\thm@notefont#3}}}
-\let\thmheadnl\relax
-\let\thm@indent\indent
-
-  \thm@bodyfont{\rm}
- \thm@headfont{\scshape}
-  \thm@notefont{}
- \thm@headpunct{.}
-\theoremstyle{definition}
-
-\def\@citex[#1]#2{%
-  \let\@citea\@empty
-  \@cite{\@for\@citeb:=#2\do
-    {\@citea\def\@citea{, \penalty\@m }%
-     \edef\@citeb{\expandafter\@firstofone\@citeb\@empty}%
-     \if@filesw\immediate\write\@auxout{\string\citation{\@citeb}}\fi
-     \@ifundefined{b@\@citeb}{\mbox{\reset@font\bfseries ?}%
-       \G@refundefinedtrue
-       \@latex@warning
-         {Citation `\@citeb' on page \thepage \space undefined}}%
-       {\hbox{\csname b@\@citeb\endcsname}}}}{#1}}
-\def\nl{[}
-\def\np{]}
-\def\@cite#1#2{\nl{#1\if@tempswa , #2\fi}\np}
-\def\xcite#1{\def\nl{}\def\np{}\cite{#1}\def\nl{[}\def\np{]}}
-
-\def\eqalign#1{\null\,\vcenter{\openup\jot\m@th
-  \ialign{\strut\hfil$\displaystyle{##}$&$\displaystyle{{}##}$\hfil
-      \crcr#1\crcr}}\,}
-%\newskip\centering \centering=0pt plus 1000pt minus 1000pt
-\def\eqalignno#1{\displ@y \tabskip0pt plus 1000pt minus 1000pt
-  \halign to\displaywidth{\hfil$\@lign\displaystyle{##}$\tabskip\z@skip
-    &$\@lign\displaystyle{{}##}$\hfil\tabskip0pt plus 1000pt minus 1000pt
-    &\llap{$\@lign##$}\tabskip\z@skip\crcr
-    #1\crcr}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Extra stuff
