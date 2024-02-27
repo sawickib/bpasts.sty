@@ -8,4 +8,4 @@ Compile with pdflatex and bibtex.
 Sources of latex style and template available at:  
 https://github.com/sawickib/bpasts.sty
 
-Contact: Bartosz.Sawicki@ee.pw.edu.pl
+Contact: Bartosz.Sawicki@pw.edu.pl
